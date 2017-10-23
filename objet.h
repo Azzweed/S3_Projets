@@ -2,12 +2,15 @@
 #define OBJET_H
 #include <SDL.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct s_objet{
-  int typeobjet; //1=Joueur 2=Monstres 3=Obstacles
+  char typeobjet; //J=Joueur M=Monstres O=Obstacles 
   double x; //l'abscisse
   double y; //l'ordonnée
   double direction; //Direction de l'objet
+  SDL_Surface sp1;
+  SDL_Surface sp2;
 };
 
 typedef struct s_objet *s_objet_t;
