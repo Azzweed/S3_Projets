@@ -1,13 +1,32 @@
 #include "objet.h"
 #include <math.h>
 
-s_objet_t new_o(int t){
-  s_objet_t c= (s_objet_t)malloc(sizeof(s_objet_t));
-  o->typecomete = t;
-  o->x = 0.;
-  o->y = 0.;
-  o->direction = 0.0;
-  return c;
+/**
+ * Crée un Objet avc comme paramétre:
+ * t : le type d'objet joueur, monstre, obstacle ...
+ * x,y : la position de l'objet
+ * typecarte : le type de carte qu'on va devoir dessiner foret, village ...
+ **/
+s_objet_t new_o(char t, int x, int y, char typecarte){
+  s_objet_t o= (s_objet_t)malloc(sizeof(s_objet_t));
+  o->typeobjet = t;
+  
+  if (t == "J"){
+    o->pv = 100;
+    o->atk = 20;
+  }
+  if (t == "M"){
+    o->pv = 200;
+    o-> atk = 50;
+  }
+  if (t == "O"){
+    o->pv = 0;
+    o->atk = 0;
+  }
+  o->x = x;
+  o->y = y;
+  o->direction = 0;
+  return o;
 }
 
 s_objet_t write_type_o(int t, s_objet_t o){
