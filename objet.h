@@ -12,8 +12,8 @@ struct s_objet{
   int y; //l'ordonnée
   int direction; //Direction de l'objet
   bool act; // variable d'etat
-  SDL_Surface sp1;
-  SDL_Surface sp2;
+  SDL_Surface *sp1;
+  SDL_Surface *sp2;
   
 };
 
@@ -21,5 +21,6 @@ typedef struct s_objet *s_objet_t;
 
 s_objet_t new_o(char t, int x, int y, char typecarte);
 
+void DrawObjet(s_objet_t t);
 
 #endif
